@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hungri-la</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+    name="Content-Security-Policy"
+    content="default-src: http: https: 'self'"
+   />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Giphy API Testing Area</title>
+   
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+  <!-- giphy -->
+    <section>
+      <form>
+        <h1>Search recipe</h1>
+        <label for="search">Enter ingredient</label>
+        <input id="search" type="search" placeholder="enter ingredient here" required />
+        <button id="btnSearch">Go</button>
+      </form>
+      <div class="out"></div>
+    </section>
+<!-- finished -->
 
-    <link href="style.css" rel="stylesheet" />
-    <script src="index.js" type="module"></script>
-</head>
-<body>
 
-    <div id="giphy-testing-area"></div>
+  
     <div id="spoonacular-testing-area"></div>
-
+  <script src="script.js"></script>
 </body>
 </html>
