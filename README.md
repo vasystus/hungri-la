@@ -1,6 +1,9 @@
 # HUNGRI-LA
 
-Project👉[View on GitHub pages here](https://vasystus.github.io/hungri-la/)
+Project👉 [View on GitHub pages here](https://vasystus.github.io/hungri-la/) 👈
+
+
+Created by 🪄 [Hallie](https://github.com/Vasystus) and [Joe](https://github.com/joe-dev-public)
 
 ### FAC week 2 Project: HTTP, fetch() and APIs
 Built as a response to: https://learn.foundersandcoders.com/course/syllabus/pre-apprenticeship/http/project/
