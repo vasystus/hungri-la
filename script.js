@@ -1,15 +1,17 @@
 'use strict';
 
-
-
 /*
-  giphy testing starts here:
+  shared code starts here:
 */
 
+const ingredientInputElement = document.querySelector('#ingredientInput');
+const submitButtonElement = document.querySelector('#submitButton');
 
+const giphySectionElement = document.querySelector('#giphy');
+const spoonacularSectionElement = document.querySelector('#spoonacular');
 
 /*
-  giphy testing ends here
+  shared code ends here.
 */
 
 
@@ -19,11 +21,27 @@
 
 
 /*
-  spoonacular testing starts here:
+  giphy code starts here:
 */
 
 
 
 /*
-  spoonacular testing ends here
+  giphy code ends here.
+*/
+
+
+
+/* --------------------------------------------------------- */
+
+
+
+/*
+  spoonacular code starts here:
+*/
+
+
+
+/*
+  spoonacular code ends here.
 */
