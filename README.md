@@ -1,6 +1,6 @@
 # HUNGRI-LA
 
-## FAC week 2 Project: HTTP, fetch() and APIs
+### FAC week 2 Project: HTTP, fetch() and APIs
 
 
 
@@ -24,7 +24,7 @@
 We planned and designed the site using Figma
 
 (see the sketches here 👉)
-[Figma](https://www.figma.com/file/Csn8nTNbjZbc6PFAfaJgDM/Hungri-la-sketches?node-id=0%3A1)
+[Figma]( https://www.figma.com/file/Csn8nTNbjZbc6PFAfaJgDM/Hungri-la-sketches?node-id=2%3A2)
 
 
 ## Stretch Goals 🏹
