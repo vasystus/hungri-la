@@ -45,6 +45,7 @@ function init() {
         //revealing stickers on the page
         let out = document.querySelector(".out");
         //as a first child
+        out.innerHTML = '';
         out.insertAdjacentElement("afterbegin", fig);
         document.querySelector("#search").value = "";
       })
