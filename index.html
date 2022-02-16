@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hungri-la</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+    name="Content-Security-Policy"
+    content="default-src: http: https: 'self'"
+   />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <title>HUNGRI-LA app</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
 
-    <link href="styles.css" rel="stylesheet" />
-    <script src="script.js" type="module"></script>
-</head>
-<body>
+    <header>
+        <h1>HUNGRI-LA</h1>
+    </header>
+    <main>
+<!-- giphy -->
+      <section>
+        <form>
+        <label for="search">What ingredient would you like to cook with?</label></br>
+        <input id="search" type="search" placeholder="e.g.potatoes" required /></br>
+        <button id="btnSearch">Show me a recipe</button>
+      </form>
+      <div class="out"></div>
+    </section>
+<!-- finished -->
 
-    <div id="giphy-testing-area"></div>
-    <div id="spoonacular-testing-area"></div>
-
+<!-- spoonacular -->
+     <section>
+        <div id="spoonacular-testing-area"></div>
+     </section>
+<!-- finished  -->
+    </main>
+    <footer>
+      <p>&copy; Copyright 2022 by
+      <a href="https://github.com/Vasystus" target="_blank">Hallie</a> and
+      <a href="https://github.com/joe-dev-public" target="_blank">Joe</a>
+      </p>
+    
+     <p>
+      Open-sourced
+      <a href="https://vasystus.github.io/hungri-la/" target="_blank"
+        >code available on GitHub</a
+      >.
+     </p>
+    </footer>
 </body>
 </html>
