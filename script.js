@@ -23,6 +23,12 @@ function init() {
         //  data, pagination, meta
         console.log(content.data);
         console.log("META", content.meta);
+
+        // If we get no results, throw an error:
+        if (content.data.length === 0){
+          throw new Error('No GIPHY image found for that search term!');
+        }
+
         //create HTML elements
         let fig = document.createElement("figure");
         let img = document.createElement("img");
