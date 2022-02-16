@@ -17,7 +17,10 @@ function init() {
     //send request to API
     fetch(url)
     // get the response
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) { throw new Error(response.status); }
+        return response.json();
+      })
     //handle the data
       .then(content => {
         //  data, pagination, meta
