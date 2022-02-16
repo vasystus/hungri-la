@@ -40,7 +40,8 @@ We planned and designed the site using Figma
 [Figma]( https://www.figma.com/file/Csn8nTNbjZbc6PFAfaJgDM/Hungri-la-sketches?node-id=2%3A2)
 
 
-## Stretch Goals 🏹## Week 2 Project: HTTP, fetch() and APIs
+## Stretch Goals 🏹
+
 
 
 
