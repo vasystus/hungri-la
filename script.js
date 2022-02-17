@@ -57,7 +57,7 @@ function init() {
         let img = document.createElement("img");
         let fc = document.createElement("figcaption");
         img.src = content.data[0].images.fixed_height.url;
-        img.alt = "";
+        img.alt = `GIPHY image of '${str}'`;
 
         fig.appendChild(img);
         fig.appendChild(fc);
