@@ -40,7 +40,9 @@ We planned and designed the site using Figma
 [Figma]( https://www.figma.com/file/Csn8nTNbjZbc6PFAfaJgDM/Hungri-la-sketches?node-id=2%3A2)
 
 
-## Stretch Goals 🏹
+## Next steps 🏹
+
+-Restrict what words can be searched.
 
 
 
