@@ -25,7 +25,8 @@ html {
     background-blend-mode: normal;
     border-radius: 6px;
     background-color: var(--light-yellow); 
-    background-image: linear-gradient(#9fedd7, #fce181, #ffffff); 
+    background-image: linear-gradient(#9fedd7, #fce181, #ffffff);
+    height: 100%;
   }
   
 body {
@@ -34,23 +35,25 @@ body {
     row-gap: var(--gap-lg);
   }
 header {
+    font-size: 1.2rem;
     text-align: center;
     margin: 2em;
     color: var(--wine-red);
     letter-spacing: 6px;
-    text-shadow: 2px 2px;
+    text-shadow: 2px 2px #fff;
     word-spacing: 10px;
   }
 
 /* search window */
 
 .search {
-  width: 40%;
+  /* width: 40%; */
   padding: 12px 20px;
   margin: 8px 2px;
   box-sizing: border-box;
   border: 2px solid var(--turquoise);
   border-radius: 4px;
+  min-width: 16rem;
 }
 
 label,
@@ -64,15 +67,24 @@ p {
 
 
 main {
+  background-color: var(--grey);
   position: relative;
   text-align: center;
   border-radius: 6px;
-  
 }
+
 section {
-  padding: 80px 32px;
-  background-color: var(--grey);
-  border-radius: 6px;
+  padding-left: 32px;
+  padding-right: 32px;
+/*   background-color: var(--grey);
+  border-radius: 6px; */
+}
+
+.giphy {
+  padding-top: 3rem;
+}
+.recipe {
+  padding-bottom: 3rem;
 }
 
 /* button */
