@@ -30,7 +30,7 @@ function init() {
     feedbackElement.innerHTML = '';
     recipeContentArea.innerHTML = '';
 
-    let url = `https://api.giphy.com/v1/stickers/search?api_key=${APIKEY}&limit=1&q=`;
+    let url = `https://api.giphy.com/v1/stickers/search?api_key=${APIKEY}&limit=1&rating=g&q=`;
     let str = document.getElementById("search").value.trim();
     url = url.concat(str);
     console.log(url);
