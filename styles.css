@@ -46,12 +46,13 @@ header {
 /* search window */
 
 .search {
-  width: 40%;
+  /* width: 40%; */
   padding: 12px 20px;
   margin: 8px 2px;
   box-sizing: border-box;
   border: 2px solid var(--turquoise);
   border-radius: 4px;
+  min-width: 16rem;
 }
 
 label,
