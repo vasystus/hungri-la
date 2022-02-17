@@ -8,11 +8,18 @@ let APIKEY = "Dli5GxSun7HzszaxwgFeRbCET2HGlCKd";
 document.addEventListener("DOMContentLoaded", init);
 function init() {
 
+  let out = document.querySelector(".out");
   const feedbackElement = document.querySelector('.p_recipe');
+  const recipeContentArea = document.querySelector('#spoonacular-testing-area');
 
   document.getElementById("btnSearch").addEventListener("click", ev => {
     ev.preventDefault(); //to stop the page reload
-    
+
+    // Reset all outputs each time a search is submitted:
+    out.innerHTML = '';
+    feedbackElement.innerHTML = '';
+    recipeContentArea.innerHTML = '';
+
     let url = `https://api.giphy.com/v1/stickers/search?api_key=${APIKEY}&limit=1&q=`;
     let str = document.getElementById("search").value.trim();
     url = url.concat(str);
@@ -46,9 +53,7 @@ function init() {
         fig.appendChild(fc);
        
         //revealing stickers on the page
-        let out = document.querySelector(".out");
         //as a first child
-        out.innerHTML = '';
         out.insertAdjacentElement("afterbegin", fig);
         document.querySelector("#search").value = "";
       })
@@ -100,8 +105,6 @@ function init() {
               //console.log(`${recipeSourceURL} | ${recipeSpoonacularSourceURL} | ${recipeTitle}`);
 
               feedbackElement.innerHTML = 'Enjoy your recipe here!';
-
-              const recipeContentArea = document.querySelector('#spoonacular-testing-area');
 
               let html = `<a href="${recipeSourceURL}">${recipeTitle}</a>`;
 
