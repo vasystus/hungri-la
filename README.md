@@ -30,7 +30,7 @@ Built as a response to: https://learn.foundersandcoders.com/course/syllabus/pre-
 3. Click submit
 4. See this ingredient illustrated with a gif sticker
 5. Shown one random recipe containing the chosen ingredient
-6. Click again to load another recipe
+
 
 ## Planning and design 🎨
 
