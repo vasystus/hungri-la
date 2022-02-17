@@ -12,6 +12,16 @@ function init() {
   const feedbackElement = document.querySelector('.p_recipe');
   const recipeContentArea = document.querySelector('#spoonacular-testing-area');
 
+  /*  Our code should probably be refactored so that one .catch will work,
+      but in the meantime we can use multiple .catches below and have their
+      callbacks call this function (to avoid too much repetition).
+  */
+  function handleError(msg) {
+    console.error(msg);
+    // Show the user the error message we threw:
+    feedbackElement.innerHTML = msg;
+  }
+
   document.getElementById("btnSearch").addEventListener("click", ev => {
     ev.preventDefault(); //to stop the page reload
 
@@ -58,6 +68,8 @@ function init() {
         document.querySelector("#search").value = "";
       })
       .then(() => {
+
+        feedbackElement.innerHTML = 'Finding you a recipe...';
 
         // Put recipe stuff inside a .then so it only loads when the GIPHY has loaded?
 
@@ -110,13 +122,15 @@ function init() {
 
               recipeContentArea.innerHTML = html;
 
-            });
+            })
+            .catch(err => { handleError(err); });
 
         })
+        .catch(err => { handleError(err); });
 
       })
       .catch(err => {
-        console.error(err);
+        handleError(err);
       });
   });
 }
