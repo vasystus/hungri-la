@@ -7,9 +7,29 @@ let APIKEY = "Dli5GxSun7HzszaxwgFeRbCET2HGlCKd";
 // https://developers.giphy.com/dashboard/
 document.addEventListener("DOMContentLoaded", init);
 function init() {
+
+  let out = document.querySelector(".out");
+  const feedbackElement = document.querySelector('.p_recipe');
+  const recipeContentArea = document.querySelector('#spoonacular-testing-area');
+
+  /*  Our code should probably be refactored so that one .catch will work,
+      but in the meantime we can use multiple .catches below and have their
+      callbacks call this function (to avoid too much repetition).
+  */
+  function handleError(msg) {
+    console.error(msg);
+    // Show the user the error message we threw:
+    feedbackElement.innerHTML = msg;
+  }
+
   document.getElementById("btnSearch").addEventListener("click", ev => {
     ev.preventDefault(); //to stop the page reload
-    
+
+    // Reset all outputs each time a search is submitted:
+    out.innerHTML = '';
+    feedbackElement.innerHTML = '';
+    recipeContentArea.innerHTML = '';
+
     let url = `https://api.giphy.com/v1/stickers/search?api_key=${APIKEY}&limit=1&q=`;
     let str = document.getElementById("search").value.trim();
     url = url.concat(str);
@@ -43,13 +63,13 @@ function init() {
         fig.appendChild(fc);
        
         //revealing stickers on the page
-        let out = document.querySelector(".out");
         //as a first child
-        out.innerHTML = '';
         out.insertAdjacentElement("afterbegin", fig);
         document.querySelector("#search").value = "";
       })
       .then(() => {
+
+        feedbackElement.innerHTML = 'Finding you a recipe...';
 
         // Put recipe stuff inside a .then so it only loads when the GIPHY has loaded?
 
@@ -78,6 +98,8 @@ function init() {
             })
             .then((json) => {
 
+              // Successful response, so show feedback and recipe link
+
               //console.log(json);
 
               const recipeSpoonacularSourceURL = json['spoonacularSourceUrl'];
@@ -94,19 +116,21 @@ function init() {
 
               //console.log(`${recipeSourceURL} | ${recipeSpoonacularSourceURL} | ${recipeTitle}`);
 
-              const recipeContentArea = document.querySelector('#spoonacular-testing-area');
+              feedbackElement.innerHTML = 'Enjoy your recipe here!';
 
               let html = `<a href="${recipeSourceURL}">${recipeTitle}</a>`;
 
               recipeContentArea.innerHTML = html;
 
-            });
+            })
+            .catch(err => { handleError(err); });
 
         })
+        .catch(err => { handleError(err); });
 
       })
       .catch(err => {
-        console.error(err);
+        handleError(err);
       });
   });
 }
