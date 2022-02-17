@@ -25,7 +25,8 @@ html {
     background-blend-mode: normal;
     border-radius: 6px;
     background-color: var(--light-yellow); 
-    background-image: linear-gradient(#9fedd7, #fce181, #ffffff); 
+    background-image: linear-gradient(#9fedd7, #fce181, #ffffff);
+    height: 100%;
   }
   
 body {
