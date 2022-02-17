@@ -107,6 +107,7 @@ button:hover {
 }
 #spoonacular-testing-area a{
   color: #c34271;
+  font-weight: bold;
 }
 
 #spoonacular-testing-area a:hover {
