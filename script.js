@@ -7,6 +7,9 @@ let APIKEY = "Dli5GxSun7HzszaxwgFeRbCET2HGlCKd";
 // https://developers.giphy.com/dashboard/
 document.addEventListener("DOMContentLoaded", init);
 function init() {
+
+  const feedbackElement = document.querySelector('.p_recipe');
+
   document.getElementById("btnSearch").addEventListener("click", ev => {
     ev.preventDefault(); //to stop the page reload
     
@@ -78,6 +81,8 @@ function init() {
             })
             .then((json) => {
 
+              // Successful response, so show feedback and recipe link
+
               //console.log(json);
 
               const recipeSpoonacularSourceURL = json['spoonacularSourceUrl'];
@@ -93,6 +98,8 @@ function init() {
               }
 
               //console.log(`${recipeSourceURL} | ${recipeSpoonacularSourceURL} | ${recipeTitle}`);
+
+              feedbackElement.innerHTML = 'Enjoy your recipe here!';
 
               const recipeContentArea = document.querySelector('#spoonacular-testing-area');
 
