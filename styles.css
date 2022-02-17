@@ -35,11 +35,12 @@ body {
     row-gap: var(--gap-lg);
   }
 header {
+    font-size: 1.2rem;
     text-align: center;
     margin: 2em;
     color: var(--wine-red);
     letter-spacing: 6px;
-    text-shadow: 2px 2px;
+    text-shadow: 2px 2px #fff;
     word-spacing: 10px;
   }
 
