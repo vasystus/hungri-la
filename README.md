@@ -42,7 +42,12 @@ We planned and designed the site using Figma
 
 ## Next steps 🏹
 
--Restrict what words can be searched.
+Potential features and improvements:
+
+- Restrict what words can be searched (https://github.com/vasystus/hungri-la/issues/22)
+- Handle the case where no GIPHY image can be found, but a recipe can be found (https://github.com/vasystus/hungri-la/issues/52)
+- Allow the user to select multiple ingredients
+- Include a summary of the recipe with the result?
 
 
 
