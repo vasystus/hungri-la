@@ -66,15 +66,24 @@ p {
 
 
 main {
+  background-color: var(--grey);
   position: relative;
   text-align: center;
   border-radius: 6px;
-  
 }
+
 section {
-  padding: 80px 32px;
-  background-color: var(--grey);
-  border-radius: 6px;
+  padding-left: 32px;
+  padding-right: 32px;
+/*   background-color: var(--grey);
+  border-radius: 6px; */
+}
+
+.giphy {
+  padding-top: 3rem;
+}
+.recipe {
+  padding-bottom: 3rem;
 }
 
 /* button */
