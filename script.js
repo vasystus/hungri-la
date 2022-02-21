@@ -73,60 +73,58 @@ function init() {
 
         // Put recipe stuff inside a .then so it only loads when the GIPHY has loaded?
 
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${str}&sort=random&number=1&apiKey=${spoonacularAPIKey}`)
-        .then((response) => {
-          if (!response.ok) { throw new Error(response.status); }
-          return response.json();
-        })
-        .then((json) => {
+        return fetch(`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${str}&sort=random&number=1&apiKey=${spoonacularAPIKey}`)
 
-          //console.log(json);
+      })
+      .then((response) => {
+        if (!response.ok) { throw new Error(response.status); }
+        return response.json();
+      })
+      .then((json) => {
 
-          // If there are no results, throw an error:
-          if (json['totalResults'] === 0) {
-            throw new Error('No recipes with that ingredient found!');
-          }
+        //console.log(json);
 
-          const recipeID = json['results'][0]['id'];
-          
-          //console.log(recipeID);
+        // If there are no results, throw an error:
+        if (json['totalResults'] === 0) {
+          throw new Error('No recipes with that ingredient found!');
+        }
 
-          fetch(`https://api.spoonacular.com/recipes/${recipeID}/information?includeNutrition=false&apiKey=${spoonacularAPIKey}`)
-            .then((response) => {
-              if (!response.ok) { throw new Error(response.status); }
-              return response.json();
-            })
-            .then((json) => {
+        const recipeID = json['results'][0]['id'];
+        
+        //console.log(recipeID);
 
-              // Successful response, so show feedback and recipe link
+        return fetch(`https://api.spoonacular.com/recipes/${recipeID}/information?includeNutrition=false&apiKey=${spoonacularAPIKey}`)
 
-              //console.log(json);
+      })
+      .then((response) => {
+        if (!response.ok) { throw new Error(response.status); }
+        return response.json();
+      })
+      .then((json) => {
 
-              const recipeSpoonacularSourceURL = json['spoonacularSourceUrl'];
-              const recipeSourceURL = json['sourceUrl'];
-              const recipeTitle = json['title'];
+        // Successful response, so show feedback and recipe link
 
-              /*  We don't know if the spoonacular API guarantees a source URL,
-                  so just in case, check if it's blank and replace with the
-                  spoonacular source URL. (PS: testing for '' might be incorrect!)
-              */
-              if (recipeSourceURL === '') {
-                recipeSourceURL = recipeSpoonacularSourceURL;
-              }
+        //console.log(json);
 
-              //console.log(`${recipeSourceURL} | ${recipeSpoonacularSourceURL} | ${recipeTitle}`);
+        const recipeSpoonacularSourceURL = json['spoonacularSourceUrl'];
+        const recipeSourceURL = json['sourceUrl'];
+        const recipeTitle = json['title'];
 
-              feedbackElement.innerHTML = 'Enjoy your recipe here!';
+        /*  We don't know if the spoonacular API guarantees a source URL,
+            so just in case, check if it's blank and replace with the
+            spoonacular source URL. (PS: testing for '' might be incorrect!)
+        */
+        if (recipeSourceURL === '') {
+          recipeSourceURL = recipeSpoonacularSourceURL;
+        }
 
-              let html = `<a href="${recipeSourceURL}">${recipeTitle}</a>`;
+        //console.log(`${recipeSourceURL} | ${recipeSpoonacularSourceURL} | ${recipeTitle}`);
 
-              recipeContentArea.innerHTML = html;
+        feedbackElement.innerHTML = 'Enjoy your recipe here!';
 
-            })
-            .catch(err => { handleError(err); });
+        let html = `<a href="${recipeSourceURL}">${recipeTitle}</a>`;
 
-        })
-        .catch(err => { handleError(err); });
+        recipeContentArea.innerHTML = html;
 
       })
       .catch(err => {
