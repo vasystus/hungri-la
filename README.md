@@ -30,7 +30,7 @@ Built as a response to: https://learn.foundersandcoders.com/course/syllabus/pre-
 3. Click submit
 4. See this ingredient illustrated with a gif sticker
 5. Shown one random recipe containing the chosen ingredient
-6. Click again to load another recipe
+
 
 ## Planning and design 🎨
 
@@ -40,7 +40,14 @@ We planned and designed the site using Figma
 [Figma]( https://www.figma.com/file/Csn8nTNbjZbc6PFAfaJgDM/Hungri-la-sketches?node-id=2%3A2)
 
 
-## Stretch Goals 🏹
+## Next steps 🏹
+
+Potential features and improvements:
+
+- Restrict what words can be searched (https://github.com/vasystus/hungri-la/issues/22)
+- Handle the case where no GIPHY image can be found, but a recipe can be found (https://github.com/vasystus/hungri-la/issues/52)
+- Allow the user to select multiple ingredients
+- Include a summary of the recipe with the result?
 
 
 

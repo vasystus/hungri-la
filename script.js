@@ -1,6 +1,6 @@
 'use strict';
 
-const spoonacularAPIKey = 'ad40309b1fd843fdbc6577dac38d03ea';
+const spoonacularAPIKey = '257bfa2a02994fccaeeaec8510f4beff';
 
 let APIKEY = "Dli5GxSun7HzszaxwgFeRbCET2HGlCKd";
 // my key from dashboard 
